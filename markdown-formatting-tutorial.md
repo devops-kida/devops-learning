@@ -35,6 +35,7 @@ To add any image, copy the image path and paste inside the paranthesis and add e
 ---
 ***
 drawing a new line
+#Make sure that there is empty line before and after the line.
 ___
 to draw a lin just add three astrick or three underscore or three hyphen  
 
@@ -60,5 +61,19 @@ To wite anything in bulletes
 Just give four space or press tab button to start a new list  
 We can use + sign also instead od astrick to write in bullets pattern
 
----
+------
+
+## Data in Table Format  
+Every row  start with Pipe synbol (|)  
+In between each column put a pipe symbol as well  
+After first row there is a seperator that separet heading from other rows. there should be atleastt three row.  
+Its not neccessary that all the pipe symbol should be in straight line. However you can lineup the pipe symbol to make it easy to read.  
+to make it right alignment in column just put colon ( : ) on the right side of hyphen.
+
+
+|  col  | Col 2 |
+| :----- | ----:  |
+|Apple  | Banana | 
+|Guava    |Grapes |
+|This is a test line | to check alingnment |
 
