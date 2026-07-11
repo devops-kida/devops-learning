@@ -27,4 +27,11 @@ This is one of the most important mental models for understanding AWS's product 
 
 AWS is a public cloud provider — this is the model you'll be working in.
 
+## 3. The Shared Responsibility Model (Important for AWS specifically)
+AWS secures the cloud infrastructure (hardware, data centers, networking). You are responsible for security in the cloud (your data, access permissions, configurations).
+
+## 4. Key Vocabulary 
+1. **Region** : A physical geographic area with multiple data centers (e.g., us-east-1 = N. Virginia). #( regions across the globe.
+2. **Availability Zone (AZ)** : An isolated data center (or cluster) within a Region. Regions have multiple AZs for redundancy. There is total 123 AZ.
+
 
