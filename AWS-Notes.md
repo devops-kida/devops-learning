@@ -6,5 +6,6 @@ Before "the cloud," if you wanted to run a website or app, you had to:
 * Install and maintain OS, networking, cooling, power backups
 * Predict how much capacity you'd need (and often guess wrong)
 
-**Cloud computing** is the delivery of computing resources — servers, storage, databases, networking, software — over the internet, on-demand, with pay-as-you-go pricing. Instead of owning the hardware, you rent it from a provider (AWS, Azure, Google Cloud) who owns and maintains massive data centers worldwide.
+**Cloud computing** is the delivery of computing resources — servers, storage, databases, networking, software — over the internet, on-demand, with pay-as-you-go pricing. 
+Instead of owning the hardware, you rent it from a provider (AWS, Azure, Google Cloud) who owns and maintains massive data centers worldwide.  
 Think of it like electricity. You don't build your own power plant to run a lightbulb — you plug into the grid and pay for what you use. Cloud computing does this for computing power.
