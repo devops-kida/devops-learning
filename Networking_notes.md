@@ -188,6 +188,17 @@ A DNS record is just a piece of information stored in the Domain Name System (DN
   1. These are set at your domain registrar (GoDaddy, Namecheap, etc.) to delegate control to your DNS hosting provider (Route 53, Cloudflare, Google Cloud DNS).
   2. Usually there are 2–4 NS records for redundancy — if one name server is down, others still answer.
   3. This is the very first thing resolved in the DNS chain: root servers → TLD servers (.com) → your domain's NS servers → then finally your A/CNAME/MX records are fetched from there.
+ 
+  |  Record  |	Points To  |	Purpose  |
+  |  ------  |  ----------  |  --------  |
+  |  A	  |  IPv4 address  |	Domain → IPv4  |
+  |  AAAA	|  IPv6 address	  |  Domain → IPv6  |
+  |  CNAME |	Another domain name  |	Alias one name to another  |
+  |  MX	  |  Mail server hostname (+priority)	|  Where to deliver email  |
+  |  NS  |	Authoritative DNS server hostname  |	Who manages this domain's DNS eg: Godaddy |
+
+
+
   
   
    
