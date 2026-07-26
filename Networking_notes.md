@@ -157,7 +157,39 @@ Authoritative nameserver responds to the Resolver with the exact IP address (e.g
 Resolver receives the IP address from the authoritative nameserver and sends it back to our computer. At this point, our computer knows how to connect to the website.
 
 ----------------------------------
-## DNS Record
+
+## DNS Record  
+A DNS record is just a piece of information stored in the Domain Name System (DNS) that tells the internet how to handle requests for a domain name.
+
+- A Record (Address Record) : Maps a domain name to an IPv4 address.  
+  When you type example.com in a browser, the resolver looks up its A record to get the IPv4 address to connect to.
+  A domain can have multiple A records (round-robin DNS) for basic load distribution — e.g., pointing to several server IPs.
+  
+- AAAA Record ("Quad-A") : Same purpose as A, but maps a domain to an IPv6 address.
+  A domain can have both an A and AAAA record simultaneously — clients prefer IPv6 if available (dual-stack), falling back to IPv4 if not.
+
+- CNAME Record (Canonical Name): It’s a type of DNS record that creates an alias, Points a domain name to another domain name (not directly to an IP).
+  Instead of mapping directly to an IP (like an A record), it says: “If someone asks for alias.example.com, go look up target.example.com instead.”  
+  ` www.example.com.    CNAME    example.com.` or www.example.com → example.com
+
+  **Important rule**: A CNAME record cannot coexist with any other record type on the same name (e.g., you can't have both a CNAME and an MX record on blog.example.com)
+
+- MX Record (Mail Exchange) : Specifies which mail servers handle email for the domain, and in what priority order.
+  ```bash
+  example.com.    MX    10    mail1.example.com.
+  example.com.    MX    20    mail2.example.com.
+  ```
+
+  The number (10, 20) is the priority — lower number = higher priority.
+  MX records point to a hostname, which must itself resolve via an A/AAAA record — it can never point directly to an IP.
+  mail1.example.com. & mail2.example.com. is hostname, a subdomain created to handle the mail server.
+
+- NS Record (Name Server) : Specifies the name servers that manage the domain.  
+  1. These are set at your domain registrar (GoDaddy, Namecheap, etc.) to delegate control to your DNS hosting provider (Route 53, Cloudflare, Google Cloud DNS).
+  2. Usually there are 2–4 NS records for redundancy — if one name server is down, others still answer.
+  3. This is the very first thing resolved in the DNS chain: root servers → TLD servers (.com) → your domain's NS servers → then finally your A/CNAME/MX records are fetched from there.
+  
+  
    
 
 
