@@ -4,6 +4,8 @@ When a user requests your site, the CDN serves it from the server closest to the
 
 - **Cache**: temprary stoeage for static data.  
 - **Edge location** :  Specific sites where cached data is stored
+  A CDN is the global system; edge locations are the local points of presence that make the CDN effective.
+  A CDN is the entire global system of distributed servers. An edge location is a specific physical data center within the CDN where content is cached and       served.
 
 - **Internet Protocal** -  
   There is total 4.3 billion ipv4 address. Ipv4 is limited and not enough for all the devices thats why we have ipv6 address.  
