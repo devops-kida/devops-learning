@@ -49,6 +49,18 @@ When a user requests your site, the CDN serves it from the server closest to the
   This means the first 3 octets (192.168.1) = network, last octet (10) = host.  
   So all devices from 192.168.1.1 to 192.168.1.254 are on the same local network and can talk directly without a router.
 
+3. Public vs Private IP Addresses
+- Private IP ranges (reserved — not routable on the internet):
+  |    Range    |	  CIDR	    |  Typical Use    |
+  |   ---------| --------      | -------        |
+  | 10.0.0.0 – 10.255.255.255 |	10.0.0.0/8 |	Large corporate/cloud networks (AWS VPCs) |
+  |172.16.0.0 – 172.31.255.255 |	172.16.0.0/12  |	Docker default networks  |
+  |192.168.0.0 – 192.168.255.255 |	192.168.0.0/16 |	Home routers, small office LANs |
+  
+- Public IPs  
+  Everything else is potentially a public IP, routable directly on the internet (e.g., your server's public IP, a website's IP).  
+  Practical relevance: Your EC2 instance has a private IP (for internal VPC communication) and often a public IP or Elastic IP (for internet access). Security groups and NAT gateways manage the boundary between them.
+
 
 - **Subnet:**  Divides large networks into smaller ones for efficient management
   
