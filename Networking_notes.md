@@ -1,18 +1,18 @@
 # 💻💻💻 Networking Notes  
--**CDN** (Content delivery network) : server which serve static data like images and videos across servers worldwide to reduce latency and improve speed. CDN caches copies of your content across multiple servers worldwide.  
+- **CDN** (Content delivery network) : server which serve static data like images and videos across servers worldwide to reduce latency and improve speed. CDN caches copies of your content across multiple servers worldwide.  
 When a user requests your site, the CDN serves it from the server closest to them, reducing latency and improving speed.
 
--**Cache**: temprary stoeage for static data.  
--**Edge location** :  Specific sites where cached data is stored
+- **Cache**: temprary stoeage for static data.  
+- **Edge location** :  Specific sites where cached data is stored
 
-**Internet Protocal** -  
+- **Internet Protocal** -  
   There is total 4.3 billion ipv4 address. Ipv4 is limited and not enough for all the devices thats why we have ipv6 address.  
   ipv6 128 bits alphanumeric number consist of Eight groups of four hexadecimal digits separated by colons.but solves IPv4 exhaustion  
 
   ipv6 is a bit complex and difficul to rememeber. Hence they find a way to to continue using ipv4 address.  
   This is how concept of subneting is intoducesd.  
   
-**Subnet:**  Divides large networks into smaller ones for efficient management    
+- **Subnet:**  Divides large networks into smaller ones for efficient management    
 
 ## CIDR (Classless Inter-Domain Routing):
 
