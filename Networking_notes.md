@@ -5,16 +5,54 @@ When a user requests your site, the CDN serves it from the server closest to the
 - **Cache**: temprary stoeage for static data.  
 - **Edge location** :  Specific sites where cached data is stored
   A CDN is the global system; edge locations are the local points of presence that make the CDN effective.
-  A CDN is the entire global system of distributed servers. An edge location is a specific physical data center within the CDN where content is cached and       served.
+  A CDN is the entire global system of distributed servers. An edge location is a specific physical data center within the CDN where content is cached and served.
 
-- **Internet Protocal** -  
+  ----------
+
+## Internet Protocal
   There is total 4.3 billion ipv4 address. Ipv4 is limited and not enough for all the devices thats why we have ipv6 address.  
   ipv6 128 bits alphanumeric number consist of Eight groups of four hexadecimal digits separated by colons.but solves IPv4 exhaustion  
 
   ipv6 is a bit complex and difficul to rememeber. Hence they find a way to to continue using ipv4 address.  
   This is how concept of subneting is intoducesd.  
+
+1. **IPv4 Structure — The Basics**  
+   An IPv4 address has 4 numbers (octets) separated by dots:  
+    ```bash
+    192  .  168  .  1  .  10
+    ```
+    Each octet is 8 bits, ranging from 0 to 255 (since 8 bits = 256 possible values, 0–255).  
+    Total = 32 bits = 4 × 8 bits.  
+    
+    Binary View (Important!)
+    ``` bash
+    192.168.1.10  →  11000000.10101000.00000001.00001010
+    ```
   
-- **Subnet:**  Divides large networks into smaller ones for efficient management    
+    Quick conversion table (memorize this — it's the "magic numbers"):  
+    `Bit position	128	64	32	16	8	4	2	1`
+    Any octet value is a sum of these. E.g., 192 = 128 + 64.
+
+2. Network Portion vs Host Portion  
+- Every IP address is split into two parts:
+
+  **Network portion** — identifies which network the device belongs to
+  **Host portion** — identifies which specific device within that network
+  
+  This split is defined by the Subnet Mask.
+  
+  Example:
+  
+  IP:          192.168.1.10
+  Subnet Mask: 255.255.255.0
+  
+  This means the first 3 octets (192.168.1) = network, last octet (10) = host.  
+  So all devices from 192.168.1.1 to 192.168.1.254 are on the same local network and can talk directly without a router.
+
+
+- **Subnet:**  Divides large networks into smaller ones for efficient management
+  
+- ----------------- 
 
 ## CIDR (Classless Inter-Domain Routing):
 
@@ -31,6 +69,21 @@ e.g: for subnet 192.168.1.0/28
 * First Usable IP:192.168.1.1  
 * Last Usable IP : 192.168.1.14
 * Subnet mask : 255.255.255.240
+
+
+- Instead of writing 255.255.255.0, DevOps tools use CIDR (Classless Inter-Domain Routing) notation:
+
+  `192.168.1.0/24`
+  
+  The /24 means 24 bits are the network portion, and the remaining 32 - 24 = 8 bits are for hosts.
+  
+ | CIDR	| Subnet Mask	|  Hosts Available	| Network/Host bits  | Common Use |
+ | ---- | --------    | -----------        | --------    |  ------------  |
+ |  /8	  |  255.0.0.0	|  ~16 million	  | 8 network bit & 24 host bits | Huge corporate networks|
+ |/16	  |  255.255.0.0	|  ~65,000	  |  16 Network & 16 host bits | AWS VPC default  |
+ | /24	|  255.255.255.0  |	  254	  |  24 Network & 8 Host bits |Typical subnet/office LAN  |
+ | /28	|  255.255.255.240  |	  14	  |  28 network & 4 host bits |Small subnet (e.g., a small AWS subnet)  |
+ | /32	|  255.255.255.255	|    1	  |  32 Network & 0 host bits | A single specific host  |
 
 ## 🤝 OSI(open system interconnection) Model:  
 1. **Physical layer**  
