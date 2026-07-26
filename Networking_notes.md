@@ -155,6 +155,9 @@ Authoritative nameserver responds to the Resolver with the exact IP address (e.g
 
 9. Return IP Address to Computer  
 Resolver receives the IP address from the authoritative nameserver and sends it back to our computer. At this point, our computer knows how to connect to the website.
+
+----------------------------------
+## DNS Record
    
 
 
