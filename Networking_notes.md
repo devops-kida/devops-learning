@@ -117,6 +117,43 @@ e.g: for subnet 192.168.1.0/28
 8. **Application Layer**
     
    ---
+
+## TCP/IP Model
+
+The model has 4 layers. Here's each one, from bottom to top:
+
+1. Network Access Layer (bottom)  
+  Job: Handle the physical connection — cables, WiFi, network cards, MAC addresses.
+  Think of this as the delivery truck and roads. It doesn't care what's inside the package, it just moves raw data (bits) between devices that are physically      connected — over Ethernet, WiFi, fiber, etc.
+
+2. Internet Layer  
+  Job: Addressing and routing — figuring out where the data needs to go.
+  This is like the postal sorting system using ZIP codes. This layer wraps your data with IP addresses (source and destination) and decides the best path across   networks to get it there. The main protocol here is IP (Internet Protocol).
+
+5. Transport Layer  
+  Job: Make sure the data arrives completely, in order, and reaches the right application.  
+  Two main protocols here, and they behave very differently:
+
+  - TCP (Transmission Control Protocol) – reliable, like a registered mail with tracking and confirmation. It checks that every packet arrived, resends lost         ones,   and puts them back in order. Used for things like web browsing, email, file transfers.  
+  - UDP (User Datagram Protocol) – fast but no guarantees, like dropping postcards in the mail. No tracking, no resending. Used for video calls, live streaming,     gaming — where speed matters more than perfection.
+
+4. Application Layer (top)  
+  Job: Where the actual programs and services live — this is what you and I interact with.  
+  This includes protocols like:
+  
+  - HTTP/HTTPS – web browsing
+  - FTP – file transfers
+  - SMTP – sending email
+  - DNS – translating website names into IP addresses
+
+### When you open a website:
+
+  - Application Layer – your browser makes an HTTP request ("give me this webpage")  
+  - Transport Layer – TCP breaks that request into segments and adds tracking info to ensure delivery  
+  - Internet Layer – IP adds source/destination addresses so it knows where to send it  
+  - Network Access Layer – the data is converted to signals and physically sent over WiFi/cable to the network  
+
+---
 ## DNS(Domain name System):
 Step 01 — Browser requests a URL and the local cache is checked first  
 Step 02 — If not in cache, the hosts file is checked  
