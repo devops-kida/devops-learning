@@ -2,8 +2,8 @@
 - **CDN** (Content delivery network) : server which serve static data like images and videos across servers worldwide to reduce latency and improve speed. CDN caches copies of your content across multiple servers worldwide.  
 When a user requests your site, the CDN serves it from the server closest to them, reducing latency and improving speed.
 
-- **Cache**: temprary stoeage for static data.  
-- **Edge location** :  Specific sites where cached data is stored
+- **Cache**: temprary storage for static data.  
+- **Edge location** :  Specific sites where cached data is stored  
   A CDN is the global system; edge locations are the local points of presence that make the CDN effective.
   A CDN is the entire global system of distributed servers. An edge location is a specific physical data center within the CDN where content is cached and served.
 
@@ -36,7 +36,7 @@ When a user requests your site, the CDN serves it from the server closest to the
 2. Network Portion vs Host Portion  
 - Every IP address is split into two parts:
 
-  **Network portion** — identifies which network the device belongs to
+  **Network portion** — identifies which network the device belongs to  
   **Host portion** — identifies which specific device within that network
   
   This split is defined by the Subnet Mask.
